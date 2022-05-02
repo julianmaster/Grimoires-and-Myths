@@ -64,7 +64,7 @@ function love.load(arg)
   love.graphics.setDefaultFilter("nearest", "nearest")
 
   Tileset = Tileset("RDE_8x8.png")
-  love.window.setMode(SCREEN_TILE_WDITH*Tileset.tileWidth*SCALE, SCREEN_TILE_HEIGHT*Tileset.tileHeight*SCALE)
+  love.window.setMode(SCREEN_TILE_WDITH*Tileset.tileWidth*SCALE, SCREEN_TILE_HEIGHT*Tileset.tileHeight*SCALE, {})
   Palette = Palette("colors.txt")
 
   EventHandler = EventHandler()
