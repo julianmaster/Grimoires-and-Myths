@@ -9,18 +9,18 @@
 
 ## Todo list
 
-[x] Finish adding keys
-[ ] Add ice region
-[ ] Dwarf cities
-[ ] Elf cities
-[ ] Human cities
-[ ] FOV
-[ ] actor characteritics
-[ ] actor inventory
-[ ] actor resources
-[ ] tiles resources (wood, flower, ...)
-[ ] Creatures
-[ ] Combat
-[ ] items
-[ ] GUI
-[ ] Saving
+- [x] Finish adding keys
+- [ ] Add ice region
+- [ ] Dwarf cities
+- [ ] Elf cities
+- [ ] Human cities
+- [ ] FOV
+- [ ] actor characteritics
+- [ ] actor inventory
+- [ ] actor resources
+- [ ] tiles resources (wood, flower, ...)
+- [ ] Creatures
+- [ ] Combat
+- [ ] items
+- [ ] GUI
+- [ ] Saving

@@ -8,7 +8,7 @@
     "editor.detectIndentation": false,
     "explorer.confirmDragAndDrop": false,
     "Lua.telemetry.enable": false,
-    "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^)\\s*($TAGS)|^//\\s*\\[x\\]|^//\\s*\\[ \\])",
+    "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|- )\\s*($TAGS)|^//\\s*\\[x\\]|^//\\s*\\[ \\])",
     "todo-tree.general.tags": [
       "TODO",
       "[x]",
