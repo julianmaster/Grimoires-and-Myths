@@ -11,17 +11,26 @@
     "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|- )\\s*($TAGS)|^//\\s*\\[x\\]|^//\\s*\\[ \\])",
     "todo-tree.general.tags": [
       "TODO",
+      "BUG",
       "[x]",
       "[ ]",
     ],
     "todo-tree.highlights.customHighlight": {
       "[x]":{
-        "foreground": "#64dd17",
+        "foreground":"#64dd17",
         "background":"#008800"
       },
+      "BUG":{
+        "foreground":"#f49236",
+        "background":"#593e2c",
+      },
       "[ ]":{
-        "foreground": "#f44336",
-        "background": "#592c2c",
+        "foreground":"#f44336",
+        "background":"#592c2c",
+      },
+      "TODO":{
+        "foreground":"#f44336",
+        "background":"#592c2c",
       },
     }
 }
