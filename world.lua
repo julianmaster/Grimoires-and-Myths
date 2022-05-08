@@ -25,7 +25,7 @@ end
 
 
 function World:update(dt)
-  -- Animations !!
+  -- TODO Animations
 end
 
 function World:draw()
