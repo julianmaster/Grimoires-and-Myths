@@ -10,6 +10,9 @@ end
 
 
 function WorldGen:generate()
+  -- init
+  self.groundTiles = {}
+
   local points = {}
   for i = 1, SITES do
     table.insert(points, Point(love.math.random() * self.width, love.math.random() * self.height))
@@ -139,7 +142,8 @@ function WorldGen:fix(voronoiDiagram, snowNorth)
   -- Adding snow
   local snowSiteList = {}
   for x = 1, self.width do
-    table.insert(snowSiteList, voronoiDiagram:closestCoordinates(x + 0.5, snowNorth and 1 + 0.5 or self.height + 0.5))
+    local y = snowNorth and 1 or self.height -- North or South
+    table.insert(snowSiteList, voronoiDiagram:closestCoordinates(x + 0.5, y + 0.5))
   end
   snowSiteList = lume.unique(snowSiteList) -- Remove duplicate
   
@@ -149,9 +153,16 @@ function WorldGen:fix(voronoiDiagram, snowNorth)
       local nx = x + 0.5
       local ny = y + 0.5
 
-      local site = voronoiDiagram:closestCoordinates(nx, ny)
-      if cog.containsValue(snowSiteList, site) then
-        self.groundTiles[x][y] = self:generateTile(SNOW_TYPE.SNOW, Snow)
+      local nearestSite = voronoiDiagram:closestCoordinates(nx, ny)
+      if cog.containsValue(snowSiteList, nearestSite) then
+        local value = love.math.random()
+        if value < 0.10 then
+          self.groundTiles[x][y] = self:generateTile(SNOW_TYPE.LIGHT_SNOW, Snow)
+        elseif value < 0.90 then
+          self.groundTiles[x][y] = self:generateTile(SNOW_TYPE.SNOW, Snow)
+        else
+          self.groundTiles[x][y] = self:generateTile(SNOW_TYPE.HEAVY_SNOW, Snow)
+        end
       end
     end
   end

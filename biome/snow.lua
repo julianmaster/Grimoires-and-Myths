@@ -2,7 +2,9 @@ Snow = Tile:extend()
 
 
 SNOW_TYPE = {
-  SNOW = {177, COLOR.LCYAN}
+  LIGHT_SNOW = {176, COLOR.LCYAN},
+  SNOW = {177, COLOR.LCYAN},
+  HEAVY_SNOW = {178, COLOR.LCYAN}
 }
 
 

@@ -10,7 +10,8 @@
 ## Todo list
 
 - [x] Finish adding keys
-- [ ] Add ice region
+- [x] Add ice region
+- [ ] Tile rotation
 - [ ] Dwarf cities
 - [ ] Elf cities
 - [ ] Human cities

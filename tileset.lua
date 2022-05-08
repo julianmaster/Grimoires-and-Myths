@@ -3,6 +3,7 @@ Tileset = Object:extend()
 
 function Tileset:new(img)
   self.tiles = {}
+  self.backgroundColor = {0, 0, 0}
 
   local imgData = love.image.newImageData(img)
   local width, height = imgData:getDimensions()
@@ -33,7 +34,12 @@ function Tileset:new(img)
 end
 
 
-function Tileset:draw(tile, x, y)
+function Tileset:draw(tile, x, y, color)
+  -- background tile
+  love.graphics.setColor(self.backgroundColor)
+  love.graphics.rectangle("fill", x, y, self.tileWidth, self.tileHeight)
+
+  love.graphics.setColor(color)
   if type(tile) == 'number' then
     love.graphics.draw(self.img, self.tiles[tile%16][math.floor(tile/16)], x, y)
   elseif type(tile) == "string" then
@@ -43,10 +49,10 @@ function Tileset:draw(tile, x, y)
 end
 
 
-function Tileset:print(str, x, y)
+function Tileset:print(str, x, y, color)
   local index = 0
   for char in string.gmatch(str, '[^%d]') do
-    self:draw(string.byte(char), x+index*self.tileWidth, y)
+    self:draw(string.byte(char), x+index*self.tileWidth, y, color)
     index = index + 1
   end
 end

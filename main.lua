@@ -25,6 +25,7 @@ function love.load(arg)
   require "palette"
   require "world"
   require "tile"
+  require "level"
 
   -- Actions
   require "action.action"

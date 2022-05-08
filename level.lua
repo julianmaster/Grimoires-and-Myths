@@ -1,0 +1,5 @@
+LEVEL = {
+  DEFAULT = 0,
+  PLAYER = 100,
+  ANIMATION = 1000,
+}
