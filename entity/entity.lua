@@ -2,7 +2,7 @@ Entity = Tile:extend()
 
 
 function Entity:new(x, y, tile, color, zLevel)
-  Entity.super.new(self, tile, color, zLevel)
+  Entity.super.new(self, tile, color, zLevel or 1)
   self.x = x
   self.y = y
 end

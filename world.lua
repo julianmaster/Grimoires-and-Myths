@@ -29,6 +29,29 @@ function World:update(dt)
 end
 
 function World:draw()
+  local tiles = {}
+
+  for x = 1, self.width do
+    for y = 1, self.height do
+      tiles[x] = tiles[x] or {}
+      tiles[x][y] = tiles[x][y] or {}
+      table.insert(tiles[x][y], self.groundTiles[x][y])
+    end
+  end
+
+  for _, entity in ipairs(self.entities) do
+    table.insert(tiles[entity.x][entity.y], entity)
+  end
+  table.insert(tiles[self.player.x][self.player.y], player)
+
+  
+  for x = 1, self.width do
+    for y = 1, self.height do
+      lume.sort(tiles[x][y], function(a, b) return a.zLevel < b.zLevel end)
+    end
+  end
+
+
   for x = 1, self.width do
     for y = 1, self.height do
       local groundTile = self.groundTiles[x][y]
