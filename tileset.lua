@@ -21,7 +21,7 @@ function Tileset:new(img)
 
   imgData:mapPixel(mapFunction)
 
-  self.img = love.graphics.newImage(imgData)
+  self.img = love.graphics.newImage(imgData, {})
 
   width = self.img:getWidth()/self.tileWidth
   height = self.img:getHeight()/self.tileHeight

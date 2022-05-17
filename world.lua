@@ -28,6 +28,7 @@ function World:update(dt)
   -- TODO Animations
 end
 
+
 function World:draw()
   local tiles = {}
 
@@ -65,6 +66,7 @@ function World:draw()
 
   self.player:draw()
 end
+
 
 function World:getPlayer()
   return self.player
