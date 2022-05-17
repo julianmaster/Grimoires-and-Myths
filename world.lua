@@ -43,7 +43,7 @@ function World:draw()
   for _, entity in ipairs(self.entities) do
     table.insert(tiles[entity.x][entity.y], entity)
   end
-  table.insert(tiles[self.player.x][self.player.y], player)
+  table.insert(tiles[self.player.x][self.player.y], self.player)
 
   
   for x = 1, self.width do
