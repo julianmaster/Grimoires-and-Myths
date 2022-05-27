@@ -5,7 +5,7 @@
 
 ## Screenshots
 
-**Comming soon**
+**Coming soon**
 
 ## Todo list
 
