@@ -13,6 +13,7 @@ function World:new()
   self.groundTiles = nil
   self.player = nil
   self.entities = nil
+  self.worldRenderer = nil
 
   self.worldgen = WorldGen(self.width, self.height, NOISE_MULTIPLIER)
   self:generate()
@@ -21,6 +22,7 @@ end
 
 function World:generate()
   self.groundTiles, self.player, self.entities = self.worldgen:generate()
+  self.worldRenderer = WorldRenderer(self.groundTiles)
 end
 
 
