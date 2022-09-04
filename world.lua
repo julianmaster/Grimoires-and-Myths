@@ -22,16 +22,11 @@ end
 
 function World:generate()
   self.groundTiles, self.player, self.entities = self.worldgen:generate()
-  self.worldRenderer = WorldRenderer(self.groundTiles)
+  self.worldRenderer = WorldRenderer(self.width, self.height)
 end
 
 
 function World:update(dt)
-  -- TODO Animations
-end
-
-
-function World:draw()
   local tiles = {}
 
   for x = 1, self.width do
@@ -47,12 +42,18 @@ function World:draw()
   end
   table.insert(tiles[self.player.x][self.player.y], self.player)
 
-  
   for x = 1, self.width do
     for y = 1, self.height do
       lume.sort(tiles[x][y], function(a, b) return a.zLevel < b.zLevel end)
     end
   end
+
+  self.worldRenderer:update(dt, tiles)
+end
+
+
+function World:draw()
+  
 
 
   for x = 1, self.width do

@@ -8,6 +8,7 @@ function Animation:new(tiles, time, play, loop)
   self.loop = loop or false
   self.currentTime = 0
   self.endCallback = nil
+  self.args = nil
 end
 
 
@@ -19,7 +20,7 @@ function Animation:update(dt)
     end
     if self.currentTime >= self.time and not self.loop then
       if self.endCallback then
-        self.endCallback()
+        self.endCallback(self.args)
       end
     end
   end
@@ -28,7 +29,7 @@ end
 
 function Animation:draw(x, y)
   local spriteNum = math.floor(self.currentTime / self.time * #self.tiles) + 1
-  self.tiles[spriteNum].draw(x, y)
+  self.tiles[spriteNum]:draw(x, y)
 end
 
 
@@ -36,13 +37,17 @@ function Animation:play()
   self.play = true
 end
 
+
 function Animation:reset()
   self.currentTime = 0
 end
 
-function Animation:setEndCallback(func)
+
+function Animation:setEndCallback(func, args)
   self.endCallback = func
+  self.args = args
 end
+
 
 function newSwitchEntityAnimation()
   local tiles = {}

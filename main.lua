@@ -24,6 +24,7 @@ function love.load(arg)
   require "tileset"
   require "palette"
   require "world"
+  require "worldrenderer"
   require "tile"
   require "level"
 
