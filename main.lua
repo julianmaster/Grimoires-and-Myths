@@ -1,3 +1,10 @@
+
+SCALE = 2
+SCREEN_TILE_WDITH = 18
+SCREEN_TILE_HEIGHT = 18
+SHOW_COLORS = false
+
+
 -- VSCode debugger
 if os.getenv("LOCAL_LUA_DEBUGGER_VSCODE") == "1" then
   print("Debug mode (VSCode)")
@@ -12,13 +19,9 @@ function love.load(arg)
     require("mobdebug").start()
   end
 
+  -- import all files
   require "src.require"
   importAll()
-
-  SCALE = 2
-  SCREEN_TILE_WDITH = 18
-  SCREEN_TILE_HEIGHT = 18
-  SHOW_COLORS = false
 
   love.graphics.setDefaultFilter("nearest", "nearest")
 

@@ -1,8 +1,8 @@
 WorldRenderer = Object:extend()
 
-
 TILE_DURATION = 0.6
 ANIMATION_DURATION = 0.2
+
 
 function WorldRenderer:new(width, height, tiles)
   self.width = width

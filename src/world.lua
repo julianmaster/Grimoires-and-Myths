@@ -1,6 +1,5 @@
 World = Object:extend()
 
-
 SITES = 120
 NOISE_MULTIPLIER = 0.7
 WORLD_WIDTH = 16
