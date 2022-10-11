@@ -12,51 +12,8 @@ function love.load(arg)
     require("mobdebug").start()
   end
 
-  -- Utils
-  Object = require "utils.classic"
-  lume = require "utils.lume"
-  cog = require "utils.cog"
-  require "utils.dump"
-
-  require "ui"
-  require "eventhandler"
-  require "color"
-  require "tileset"
-  require "palette"
-  require "world"
-  require "worldrenderer"
-  require "tile"
-  require "level"
-
-  -- Actions
-  require "action.action"
-  require "action.colorsui"
-  require "action.event"
-  require "action.move"
-  require "action.quit"
-  require "action.generateworld"
-  require "action.scale"
-
-  -- Generation
-  require "worldgen"
-  require "generation.edge"
-  require "generation.event"
-  require "generation.parabola"
-  require "generation.point"
-  require "generation.voronoi"
-
-  -- Biomes
-  require "biome.desert"
-  require "biome.forest"
-  require "biome.land"
-  require "biome.mountain"
-  require "biome.ocean"
-  require "biome.swamp"
-  require "biome.snow"
-
-  -- Entities
-  require "entity.entity"
-  require "entity.player"
+  require "src.require"
+  importAll()
 
   SCALE = 2
   SCREEN_TILE_WDITH = 18

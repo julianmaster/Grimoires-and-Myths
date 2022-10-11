@@ -1,0 +1,45 @@
+
+function importAll()
+  Object = require "utils.classic"
+  lume = require "utils.lume"
+  cog = require "utils.cog"
+  require "utils.dump"
+
+  require "src.timer"
+  require "src.animation"
+  require "src.color"
+  require "src.eventhandler"
+  require "src.level"
+  require "src.palette"
+  require "src.tile"
+  require "src.tileset"
+  require "src.ui"
+  require "src.world"
+  require "src.worldgen"
+  require "src.worldrenderer"
+
+  require "src.action.action"
+  require "src.action.colorsui"
+  require "src.action.event"
+  require "src.action.generateworld"
+  require "src.action.move"
+  require "src.action.quit"
+  require "src.action.scale"
+
+  require "src.biome.desert"
+  require "src.biome.forest"
+  require "src.biome.land"
+  require "src.biome.mountain"
+  require "src.biome.ocean"
+  require "src.biome.snow"
+  require "src.biome.swamp"
+
+  require "src.entity.entity"
+  require "src.entity.player"
+
+  require "src.generation.edge"
+  require "src.generation.event"
+  require "src.generation.parabola"
+  require "src.generation.point"
+  require "src.generation.voronoi"
+end

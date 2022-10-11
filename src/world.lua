@@ -22,13 +22,17 @@ end
 
 function World:generate()
   self.groundTiles, self.player, self.entities = self.worldgen:generate()
-  self.worldRenderer = WorldRenderer(self.width, self.height)
+  self.worldRenderer = WorldRenderer(self.width, self.height, self:generateTiles())
 end
 
 
 function World:update(dt)
-  local tiles = {}
+  self.worldRenderer:update(dt, self:generateTiles())
+end
 
+
+function World:generateTiles()
+  local tiles = {}
   for x = 1, self.width do
     for y = 1, self.height do
       tiles[x] = tiles[x] or {}
@@ -47,27 +51,26 @@ function World:update(dt)
       lume.sort(tiles[x][y], function(a, b) return a.zLevel < b.zLevel end)
     end
   end
-
-  self.worldRenderer:update(dt, tiles)
+  return tiles
 end
 
 
 function World:draw()
-  
+  self.worldRenderer:draw()
 
 
-  for x = 1, self.width do
-    for y = 1, self.height do
-      local groundTile = self.groundTiles[x][y]
-      groundTile:draw(x, y)
-    end
-  end
+  -- for x = 1, self.width do
+  --   for y = 1, self.height do
+  --     local groundTile = self.groundTiles[x][y]
+  --     groundTile:draw(x, y)
+  --   end
+  -- end
 
-  for _, entity in ipairs(self.entities) do
-    entity:draw()
-  end
+  -- for _, entity in ipairs(self.entities) do
+  --   entity:draw()
+  -- end
 
-  self.player:draw()
+  -- self.player:draw()
 end
 
 
